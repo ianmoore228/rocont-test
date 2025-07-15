@@ -2,7 +2,7 @@
 
 # Инструкция по установке и запуску проекта
 
-1. Выполнить комманду:
+1. Выполнить команду:
 ```bash
 git clone https://github.com/ianmoore228/rocont-test.git
 cd rocont-test
