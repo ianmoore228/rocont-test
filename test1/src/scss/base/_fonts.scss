@@ -1,0 +1,16 @@
+@font-face {
+    font-family: gropled;
+    src: url(/fonts/Gropled-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: tildaSans;
+    src: url(/fonts/TildaSans-VF.ttf);
+    font-weight: 250 900;
+    font-style: normal;
+}
+
+$font-title: 'gropled', sans-serif;
+$font-text: 'tildaSans', sans-serif;

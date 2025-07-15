@@ -1,0 +1,142 @@
+@use '../base/variables' as v;
+@use '../base/fonts' as f;
+
+@mixin button {
+  font-size: 1.125rem;
+  font-family: f.$font-title;
+  padding: 16px 16px 16px 24px;
+  border-radius: 40px;
+  line-height: 1.1;
+  display: flex;
+}
+
+@mixin green-button {
+  background-color: v.$color-green;
+  color: v.$color-white;
+  transition: color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+
+  &:hover {
+
+    color: v.$color-white;
+    box-shadow: 0 0px 8px v.$color-green;
+  }
+
+  &:active {
+    transform: scale(0.92);
+    transition: transform 0.1s ease;
+  }
+}
+
+@mixin white-button {
+  background-color: v.$color-white;
+  color: v.$color-green;
+  transition:  color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    color: darken(v.$color-green, 15%);
+    box-shadow: 0 0px 8px v.$color-white; 
+  }
+
+  &:active {
+    transform: scale(0.92);
+    transition: transform 0.1s ease;
+  }
+}
+
+@mixin arrow {
+  height: 20px;
+  border-radius: 50px;
+}
+
+@mixin flex-between ($align-items: center) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $align-items;
+}
+
+@mixin input {
+  border-radius: 40px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+}
+
+@mixin h1-title {
+  font-size: 4rem;
+  font-family: f.$font-title;
+  line-height: 0.9;
+
+  & {
+    @media screen and (max-width: 1400px) {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+}
+
+@mixin h2-title {
+  font-size: 2.5rem;
+  font-family: f.$font-title;
+  line-height: 0.95;
+
+  & {
+    @media screen and (max-width: 1400px) {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@mixin h4-title {
+  font-size: 1.5rem;
+  font-family: f.$font-title;
+  line-height: 1.1;
+
+  & {
+    @media screen and (max-width: 1400px) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@mixin text-lead {
+  font-size: 1.3125rem;
+  font-family: f.$font-text;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+
+  & {
+    @media screen and (max-width: 1400px) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+@mixin text-body {
+  font-size: 1rem;
+  font-family: f.$font-text;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+@mixin text-note {
+  font-size: 1rem;
+  font-family: f.$font-text;
+  letter-spacing: -0.02em;
+
+  & {
+    @media screen and (max-width: 1400px) {
+      font-size: 0.75rem;
+
+    }
+
+  }
+
+}
+
+@mixin error {
+  color: v.$color-red;
+  font-size: 16px;
+  height: 19px;
+  margin: 1px 0 8px 0;
+  font-weight: 600;
+}

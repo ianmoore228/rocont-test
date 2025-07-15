@@ -1,0 +1,54 @@
+@use './fonts' as f;
+@use '../utils/mixins' as m;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+    // overflow-x: hidden;
+  }
+
+body {
+    background-color: #F6F6F6;
+    background: #F6F6F6 url('/images/bg-scroll.svg') no-repeat;
+    background-position: top -550px center;
+    height: 100%;
+    // overflow-x: hidden;
+    
+    @include m.text-body;
+
+    @media screen and (max-width: 1400px) {
+        background: #F6F6F6 url('/images/bg-fixed.png') no-repeat;
+        background-attachment: fixed;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    @include m.text-body;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    width: fit-content;
+}
+
+input::placeholder, textarea::placeholder {
+  @include m.text-body;
+  color: #2E2D2B;
+}

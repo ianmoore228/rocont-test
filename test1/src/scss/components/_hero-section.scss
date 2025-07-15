@@ -1,0 +1,135 @@
+@use '../base/variables' as v;
+@use '../utils/mixins' as m;
+
+.hero-section {
+  margin: v.$body-margin;
+  position: relative;
+  overflow: hidden;
+  color: v.$color-white;
+  margin-top: 0px;
+  border-radius: v.$body-radius;
+  max-width: v.$body-width-desktop;
+  padding: 64px;
+  display: flex;
+
+  @media screen and (max-width: 1400px) {
+    margin: v.$body-margin-mobile;
+    max-width: v.$body-width-mobile;
+    margin-top: 0px;
+    padding: 32px;
+    // box-sizing: border-box;
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding: 0px;
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: 640px) {
+    border-radius: v.$body-radius-mobile;
+  }
+
+  >.text-wrapper {
+    width: 100%;
+    @include m.flex-between(flex-end);
+
+
+   
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
+
+    >.main-container {
+      max-width: 70%;
+
+      @media screen and (max-width: 1400px) {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      >.title {
+        @include m.h1-title;
+
+        @media screen and (max-width: 960px) {
+         margin: -170px 32px 80px 32px;
+        max-width: 220px;
+        }
+      }
+
+      >.lead {
+    
+        padding: 10% 0;
+        max-width: 426px;
+        @include m.text-lead;
+
+        @media screen and (max-width: 960px) {
+          max-width: 100%;
+          padding: 32px 0;
+          color: v.$color-black;
+          // width: 100%;
+        }
+      }
+
+      >.site-button {
+        @include m.button;
+        @include m.green-button;
+
+        >.arrow {
+
+          background-color: v.$color-white;
+          margin-left: 16px;
+          @include m.arrow;
+        }
+      }
+    }
+
+    >.meta-container {
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      text-align: right;
+      color: v.$color-white;
+
+      width: 100%;
+      padding-top: 24px;
+      @include m.text-note;
+
+      @media screen and (max-width: 960px) {
+        flex-direction: row;
+        color: v.$color-black;
+      }
+
+      @media  screen and (max-width: 410px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  >.video-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: v.$body-radius;
+
+    @media screen and (max-width: 960px) {
+      position: relative;
+      height: 250px;
+    }
+
+    @media  screen and (max-width: 640px) {
+      height: 200px;
+      border-radius: v.$body-radius-mobile;
+    }
+    
+  
+  }
+}

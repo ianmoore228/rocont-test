@@ -1,0 +1,214 @@
+@use '../base/variables' as v;
+@use '../utils/mixins' as m;
+
+.form-section {
+    margin: v.$body-margin;
+    color: v.$color-white;
+    background-color: v.$color-green;
+    border-radius: v.$body-radius;
+    max-width: v.$body-width-desktop;
+    padding: 64px;
+    @include m.flex-between;
+
+    @media screen and (max-width: 1400px) {
+        margin: v.$body-margin-mobile;
+        max-width: v.$body-width-mobile;
+    }
+
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    @media screen and (max-width: 640px) {
+        border-radius: v.$body-radius-mobile;
+      }
+
+    >.advantages-container {
+
+        @media screen and (max-width: 960px) {
+            width: 100%;
+        }    
+
+        >.title {
+            margin-bottom: 16px;
+            @include m.h2-title;
+
+            @media screen and (max-width: 960px) {
+               width: 98%;
+            }
+
+        }
+
+        >.advantages-list {
+
+            @media screen and (max-width: 960px) {
+            padding: 0px 0 24px 0;
+                
+            }
+
+            >.advantages-item {
+                display: flex;
+                margin-top: 16px;
+
+                >.text {
+                    @include m.text-lead;
+                }
+
+                >.arrow-wrapper {
+                    width: 24px;
+                    min-width: 24px;
+                    height: 24px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    border-radius: 50px;
+                    background-color: v.$color-white;
+                    margin-right: 8px;
+
+                    >.arrow {
+                        height: 24px;
+                        width: 60px;
+                        position: relative;
+                        right: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    >.feedback-form {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 960px) {
+            width: 100%;
+        }   
+
+        >.inputs-wrapper {
+           
+            @media screen and (max-width: 960px) {
+                width: 100%;
+                display: flex;
+                gap: 8px;
+            }
+
+            @media screen and (max-width: 640px) {
+                flex-direction: column;
+            }
+                
+        >.input-container {
+
+        width: 100%;
+
+        @media screen and (max-width: 960px) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 640px) {
+          width: 100%;
+        }
+    
+
+        >.input {
+            @include m.input;
+            width: 100%;
+
+            &.error {
+                border: 1px solid v.$color-red;
+            }
+
+        }
+
+        >.errorname {
+            @include m.error;
+        }
+
+        >.errorphone {
+            @include m.error;
+        }
+    }
+
+       
+        >.site-button {
+            @include m.button;
+            @include m.white-button;
+            color: v.$color-black;
+            width: fit-content;
+
+            >.arrow {
+                @include m.arrow;
+                background-color: v.$color-green;
+                margin-left: 8px;
+            }
+        }
+
+                   
+    }
+
+    
+    >.checkbox-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        position: relative;
+
+        >.input {
+            position: absolute;
+            opacity: 0;
+            width: 25px;
+            height: 25px;
+            margin: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        >.image-checkbox {
+            width: 25px;
+            height: 25px;
+            // padding: 5px;
+            background-image: url('/images/input-unchecked.svg');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-image 0.2s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        >.input:checked+.image-checkbox {
+            background-image: url('/images/input-checked.svg');
+            width: 25px;
+            height: 25px;
+            background-size: 24px;
+            padding: 0;
+        }
+
+        >.text {
+            font-size: 14px;
+            color: v.$color-white;
+            user-select: none;
+            z-index: 1;
+        }
+
+   
+    }
+    >.site-button {
+        @include m.button;
+        @include m.white-button;
+        color: v.$color-black;
+        width: fit-content;
+
+        >.arrow {
+            @include m.arrow;
+            background-color: v.$color-green;
+            margin-left: 8px;
+        }
+}
+
+    }
+}

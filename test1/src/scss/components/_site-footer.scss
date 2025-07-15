@@ -1,0 +1,125 @@
+@use '../base/variables' as v;
+@use '../utils/mixins' as m;
+
+
+.site-footer {
+    margin: v.$body-margin;
+    width: v.$body-width-desktop;
+    padding: 32px 0px;
+    margin-top: 0;
+
+
+    @media screen and (max-width: 1400px) {
+        margin: v.$body-margin-mobile;
+        margin-top: 0;
+        width: v.$body-width-mobile;
+        box-sizing: border-box;
+    }
+
+    >.links-wrapper {
+        text-wrap: nowrap;
+        display: grid;
+        grid-template-columns: 0.17fr 0.17fr 0.8fr 0.4fr 0.17fr;
+        grid-template-rows: auto 0.3fr;
+        gap: 0px 0%;
+        grid-template-areas:
+            ". . . . ."
+            ". . . . .";
+
+        >.-policy {
+            grid-column: 4;
+            grid-row: 2;
+
+        }
+
+        >.logo {
+            grid-column: 5;
+            grid-row: 1;
+            // width: 130px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            row-gap: 16px;
+            width: 98%;
+            column-gap: 16px;
+        }
+
+
+        >.border-top {
+            display: none;
+        }
+
+        @media screen and (max-width: 960px) {
+            column-gap: 32px;
+
+        }
+
+        @media screen and (max-width: 640px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(9, auto);
+            grid-template-areas:
+              "."
+              "."
+              "."
+              "."
+              "."
+              "."
+              "."
+              "."
+              ".";
+          
+            >.logo {
+              grid-column: 1;
+              grid-row: 1;
+            }
+          
+            >.-system {
+              grid-column: 1;
+              grid-row: 2;
+            }
+          
+            >.-architecture {
+              grid-column: 1;
+              grid-row: 3;
+              margin-left: 0;
+            }
+          
+            >.-ours {
+              grid-column: 1;
+              grid-row: 6;
+              margin-left: 0;
+            }
+          
+            >.-comp {
+              grid-column: 1;
+              grid-row: 4;
+            }
+          
+            >.-reviews {
+              grid-column: 1;
+              grid-row: 5;
+              margin-left: 0;
+            }
+          
+            >.border-top {
+              display: block;
+              grid-column: 1;
+              grid-row: 7;
+              height: 1px;
+              background-color: v.$color-black;
+            }
+          
+            >.copyright {
+              grid-column: 1;
+              grid-row: 8;
+            }
+          
+            >.-policy {
+              grid-column: 1;
+              grid-row: 9;
+            }
+          }
+          
+    }
+
+}

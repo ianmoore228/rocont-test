@@ -1,0 +1,139 @@
+@use '../base/variables' as v;
+@use '../utils/mixins' as m;
+
+.contacts-section {
+    margin:  v.$body-margin;
+    max-width: v.$body-width-desktop;
+   @include m.flex-between(stretch); 
+    gap: 8px;
+
+    @media screen and (max-width: 1400px) {
+        margin: v.$body-margin-mobile;
+        max-width: v.$body-width-mobile;
+
+      }
+
+      @media screen and (max-width: 960px) {
+        flex-direction: column;
+      }
+  
+    >.contacts-container {
+      padding: 64px;
+      color: v.$color-black;
+      background-color: v.$color-white;
+      border-radius: v.$body-radius;
+      width: 50%;
+
+      @media screen and (max-width: 1400px) {
+        width: 60%;
+        padding: 48px;
+      }
+
+      @media screen and (max-width: 960px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 640px) {
+        border-radius: v.$body-radius-mobile;
+        padding: 24px;
+      }
+  
+      >.title {
+        @include m.h2-title;
+      }
+  
+      >.contacts-list {
+        padding: 32px 0;
+
+        @media screen and (max-width: 1400px) {
+            padding: 24px 0px;
+          }
+
+          @media screen and (max-width: 640px) {
+            padding: 0px 0px 24px 0;
+          }
+
+          >.phone-container {
+            display: flex;
+            gap: 32px;
+
+            @media screen and (max-width: 1300px) {
+                flex-direction: column;
+                gap: 0;
+              }
+
+              @media screen and (max-width: 960px) {
+                flex-direction: row;
+                gap: 32px;
+              }
+
+              @media screen and (max-width: 640px) {
+                flex-direction: column;
+                gap: 0;
+              }
+
+
+            >.contacts-item {
+                display: flex;
+                margin-top: 16px;
+        
+                >.icon {
+                  margin-right: 8px;
+                }
+        
+                >.text {
+                  @include m.text-lead;
+                }
+          }
+        }
+  
+        >.contacts-item {
+          display: flex;
+          margin-top: 16px;
+  
+          >.icon {
+            margin-right: 8px;
+          }
+  
+          >.text {
+            @include m.text-lead;
+          }
+        }
+      }
+  
+      >.site-button {
+        @include m.button;
+        @include m.green-button;
+  
+        >.arrow {
+          @include m.arrow;
+          background-color: v.$color-white;
+          margin-left: 8px;
+        }
+      }
+    }
+  
+    >.map-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 960px) {
+        width: 100%;
+        height: 300px;
+      }
+  
+      >.map {
+        border-radius: v.$body-radius;
+        flex: 1 1 auto;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+
+        @media screen and (max-width: 640px) {
+            border-radius: v.$body-radius-mobile;
+          }
+      }
+    }
+  }
+  
