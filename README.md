@@ -4,7 +4,6 @@
 
 1. Выполнить комманду:
 git clone https://github.com/ianmoore228/rocont-test.git
-<br>
 cd rocont-test
 
 2. Установить зависимости:
