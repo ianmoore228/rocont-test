@@ -16,8 +16,6 @@
   transition: color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
 
   &:hover {
-
-    color: v.$color-white;
     box-shadow: 0 0px 8px v.$color-green;
   }
 
@@ -33,7 +31,6 @@
   transition:  color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
 
   &:hover {
-    color: darken(v.$color-green, 15%);
     box-shadow: 0 0px 8px v.$color-white; 
   }
 

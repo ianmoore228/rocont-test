@@ -50,8 +50,72 @@
         }
 
         @media screen and (max-width: 960px) {
-            column-gap: 32px;
+          @media screen and (max-width: 960px) {
+            grid-template-columns: 0.17fr 0.17fr 1fr;
+            grid-template-rows: repeat(6, auto);
+            grid-template-areas:
+                ". . ."
+                ". . ."
+                ". . ."
+                "full full full"
+                ". . ."
+                ". . .";
+            column-gap: 16px;
+            row-gap: 16px;
 
+            >.border-top {
+                display: block;
+                grid-column: 1;
+                grid-row: 4;
+                height: 1px;
+                background-color: v.$color-black;
+                grid-area: full;
+            }
+
+            >.-system {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            >.-architecture {
+                grid-column: 2;
+                grid-row: 2;
+                margin-left: -15px;
+            }
+
+            >.-ours {
+                grid-column: 3;
+                grid-row: 2;
+               margin-left: 30px;
+            }
+
+            >.logo {
+                grid-column: 1 / span 2;
+                grid-row: 1;
+            }
+
+            >.-comp {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            >.-reviews {
+                grid-column: 2;
+                grid-row: 3;
+                margin-left: -15px;
+            }
+
+            >.copyright {
+                grid-column: 1;
+                grid-row: 5;
+            }
+
+            >.-policy {
+                grid-column: 1 / span 2;
+                grid-row: 6;
+            }
+        }
+            column-gap: 32px;
         }
 
         @media screen and (max-width: 640px) {
